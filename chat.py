@@ -14,7 +14,7 @@ else:
 
 openai = OpenAI()
 
-reader = PdfReader("/home/nccinfra/AI/agents/1_foundations/me/Profile.pdf")
+reader = PdfReader("Profile.pdf")
 linkedin_text = ""
 for page in reader.pages:
     if page.extract_text():
