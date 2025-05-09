@@ -20,7 +20,7 @@ for page in reader.pages:
     if page.extract_text():
         linkedin_text += page.extract_text()
 
-with open("/home/nccinfra/AI/agents/1_foundations/me/summary.txt", "r", encoding="utf-8") as f:
+with open("summary.txt", "r", encoding="utf-8") as f:
     summary = f.read()
 
 name = "Mohamed Zayed"
