@@ -6,6 +6,7 @@ import os
 load_dotenv(override=True)
 
 openapi_api_key = os.getenv("OPENAI_API_KEY")
+port = int(os.environ.get("PORT", 7860))
 if openapi_api_key:
     print("OpenAI API key loaded successfully.")
 else:
@@ -40,4 +41,4 @@ def chat(message, history):
     response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
     return response.choices[0].message.content
 if __name__ == "__main__":
-    gr.ChatInterface(chat, type="messages").launch(share=True, server_port=7860)
+    gr.ChatInterface(chat, type="messages").launch(server_port=port, share=True)
