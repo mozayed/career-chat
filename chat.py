@@ -40,4 +40,4 @@ def chat(message, history):
     response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
     return response.choices[0].message.content
 if __name__ == "__main__":
-    gr.ChatInterface(chat, type="messages").launch("share=True")
+    gr.ChatInterface(chat, type="messages").launch(share=True)
