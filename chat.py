@@ -41,4 +41,4 @@ def chat(message, history):
     response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
     return response.choices[0].message.content
 if __name__ == "__main__":
-    gr.ChatInterface(chat, type="messages").launch(server_port=port, share=True)
+    gr.ChatInterface(chat, type="messages").launch(server_name="0.0.0.0", server_port=port, share=True)
